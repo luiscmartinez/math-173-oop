@@ -6,9 +6,9 @@ using namespace std;
 double average(vector<double> nums)
 {
     double total = 0;
-    for (int i = 0; i < nums.size(); ++i)
+    for (auto &x : nums)
     {
-        total += nums[i];
+        total += x;
     }
     return total / nums.size();
 }
