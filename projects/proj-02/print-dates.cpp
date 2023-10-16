@@ -35,9 +35,8 @@ void print_consecutive_dates(int num)
     int month_index = 0; // January
     string day = days[day_index];
     string month = months[month_index];
-    int year = 2000;
-    int date = 1;
-    int totalDays;
+    int year = 2000, date = 1, totalDays;
+
     for (int i = 0; i < num; i++)
     {
         cout << days[day_index] << ", " << months[month_index] << " " << date << ", " << year << "\n";
@@ -97,5 +96,5 @@ void print_consecutive_dates(int num)
 
 int main()
 {
-    print_consecutive_dates(366);
+    print_consecutive_dates(16000);
 }
