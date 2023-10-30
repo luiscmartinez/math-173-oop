@@ -1,3 +1,6 @@
+// Luis Martinez
+// 888218645
+// Oct 30 2023
 #include "levenshtein.h"
 #include "load_dictionary.h"
 #include "spellchecker.h"
