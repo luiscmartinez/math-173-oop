@@ -33,7 +33,10 @@ double area(const triangle &T)
 // the perimeter of a triangle
 double perimeter(const triangle &T)
 {
-
+    double distance1 = distance(T.B, T.C);
+    double distance2 = distance(T.A, T.C);
+    double distance3 = distance(T.A, T.B);
+    return distance1 + distance2 + distance3;
 }
 
 int main()
@@ -42,5 +45,6 @@ int main()
     triangle T = {A, B, C};
     std::cout << "The area of my triangle is approximately "
               << area(T) << ".\n\n";
+    std::cout << "The perimeter of my triangle is approximately " << perimeter(T) << "\n";
 }
- 
+// 
