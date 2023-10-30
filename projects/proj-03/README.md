@@ -11,7 +11,8 @@ which returns possible spelling corrections of a (perhaps) misspelled word. It t
 ## Levenshtein Distance
 Mathematician Vladimir Levenshtein created a "distance" function for strings around 1965 which you will use to correct misspelled words. This "Levenshtein distance" between two words is, roughly, the minimal number of character changes, insertions, or deletions required to transform one word to another. The idea is that simple typos should yield small Levenshtein distances. For example, the Levenshtein distance between "bible" and "bubble" is 2 because the moves
 "bible" → "buble" → "bubble"
-1) converting the "i" in "bible" to "u", and then (2) inserting a "b" before the "l" in "buble" are sufficient for the conversion, and this is the smallest number of moves possible for the conversion (which is not hard to prove). Here is a recursive definition adapted from the Wikipedia article on Levenshtein distance.
+1) converting the "i" in "bible" to "u", and then 
+2) inserting a "b" before the "l" in "buble" are sufficient for the conversion, and this is the smallest number of moves possible for the conversion (which is not hard to prove). Here is a recursive definition adapted from the Wikipedia article on Levenshtein distance.
 Definition. If a and b are strings, then their Levenshtein distance, lev(a, b), is
 (1) a. size(), if b. size() is 0,
 (2) b. size(), if a. size() is 0,
@@ -20,8 +21,10 @@ a and b with their first characters removed, respectively, and if none of these 
 (4) 1 + the smallest of lev(a′, b), lev(a, b′) and lev(a′, b′)
 ## Requirements
 1. You must define a function
-int levenshtein(const std::string& a, const std::string& b); which returns the Levenshtein distance between words a and b. Give its declara- tion in a file named levenshtein.h, and definition in a file named levenshtein.cpp. Please give a recursive definition based on the definition above. Do not copy code from the internet.
-2. Declare the suggested_corrections() function in a file spellcheck.h and give its definition in the file spellcheck.cpp. This function must use the levenshtein() function from levenshtein.h to compute the distances, and return a list of n words from dictionary_words with minimal Levenshtein distances. Be sure to return exactly n words. For example, if there are 100 words with the same minimal Leven- shtein distance to a given word, and n = 5 suggestions are requested, then return any 5 of the 100 words. (I do not care how you choose.)
+```int levenshtein(const std::string& a, const std::string& b); ``` 
+which returns the Levenshtein distance between words a and b. Give its declaration in a file named levenshtein.h, and definition in a file named levenshtein.cpp. Please give a recursive definition based on the definition above. Do not copy code from the internet.
+
+2. Declare the ```suggested_corrections()``` function in a file spellcheck.h and give its definition in the file spellcheck.cpp. This function must use the ```levenshtein()``` function from levenshtein.h to compute the distances, and return a list of n words from dictionary_words with minimal Levenshtein distances. Be sure to return exactly n words. For example, if there are 100 words with the same minimal Leven- shtein distance to a given word, and n = 5 suggestions are requested, then return any 5 of the 100 words. (I do not care how you choose.)
 3. Define main() in main.cpp as follows.
 int main() {
 auto words = load_dictionary("dictionary.txt"); char response = ’y’;
