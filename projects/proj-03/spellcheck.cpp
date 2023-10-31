@@ -17,7 +17,7 @@ std::vector<std::string> suggested_corrections(const std::string &word,
     }
     std::sort(distances.begin(), distances.end());
     std::vector<std::string> results;
-    for (int i = 0; i <= n; ++i)
+    for (int i = 0; i < n; ++i)
     {
         results.push_back(distances[i].second);
     }
