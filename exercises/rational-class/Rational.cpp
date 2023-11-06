@@ -1,12 +1,12 @@
 #include "Rational.h"
 #include <ostream>
 #include "gcd.h"
-//
+// used to reduce fraction
 void Rational::reduce()
 {
-    int greatestCommonFactor = gcd(num, den);
-    num /= greatestCommonFactor;
-    den /= greatestCommonFactor;
+    int greatestCommonDivisor = gcd(num, den);
+    num /= greatestCommonDivisor;
+    den /= greatestCommonDivisor;
 }
 
 Rational::Rational(int n, int d)
@@ -26,6 +26,19 @@ Rational &Rational::operator+=(const Rational &a)
     num = x * z + y * w;
     den = y * z;
 
+    reduce();
+    return *this;
+}
+// subtracts two rational numbers
+Rational &Rational::operator-=(const Rational &a) {
+    int x = num;
+    int y = den;
+    int w = a.num;
+    int z = a.den;
+    // i think we might be able to reduce first than determine if dens are equal
+    if (y == z) {
+        num = x - w;
+    }
     reduce();
     return *this;
 }
