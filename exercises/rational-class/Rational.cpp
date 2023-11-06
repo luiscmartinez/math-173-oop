@@ -15,10 +15,9 @@ Rational::Rational(int n, int d)
     den = d;
 }
 
-// define Rational& Rational::operator+=(const Rational& a)
+// adds two rational numbers
 Rational &Rational::operator+=(const Rational &a)
 {
-    // adds
     int x = num;
     int y = den;
     int w = a.num;
@@ -39,6 +38,20 @@ Rational &Rational::operator-=(const Rational &a) {
     if (y == z) {
         num = x - w;
     }
+    //! TODO: add support for subtracting two rationals w different dens
+    reduce();
+    return *this;
+}
+
+Rational &Rational::operator*=(const Rational &a) {
+    int x = num;
+    int y = den;
+    int w = a.num;
+    int z = a.den;
+
+    num = x * w;
+    den = y * z;
+
     reduce();
     return *this;
 }
