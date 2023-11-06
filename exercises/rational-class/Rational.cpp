@@ -37,6 +37,9 @@ Rational &Rational::operator-=(const Rational &a) {
     // i think we might be able to reduce first than determine if dens are equal
     if (y == z) {
         num = x - w;
+    } else {
+        num = x * z - y * w;
+        den = y * z;
     }
     //! TODO: add support for subtracting two rationals w different dens
     reduce();
