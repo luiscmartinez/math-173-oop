@@ -41,7 +41,6 @@ Rational &Rational::operator-=(const Rational &a) {
         num = x * z - y * w;
         den = y * z;
     }
-    //! TODO: add support for subtracting two rationals w different dens
     reduce();
     return *this;
 }
