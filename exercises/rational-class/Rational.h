@@ -9,6 +9,7 @@ public:
     Rational &operator+=(const Rational &);
     Rational &operator-=(const Rational &);
     Rational &operator*=(const Rational &);
+    Rational &operator/=(const Rational &);
 
     friend std::ostream& operator<<(std::ostream&, const Rational&);
 

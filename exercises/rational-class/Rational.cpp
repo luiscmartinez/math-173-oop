@@ -56,6 +56,19 @@ Rational &Rational::operator*=(const Rational &a) {
     return *this;
 }
 
+Rational &Rational::operator/=(const Rational &a) {
+    int x = num;
+    int y = den;
+    int w = a.num;
+    int z = a.den;
+
+    num = x * z;
+    den = y * w;
+
+    reduce();
+    return *this;
+}
+
 // define std::ostream& operator<<(std::ostream& out, const Rational& a)
 std::ostream &operator<<(std::ostream &out, const Rational &a)
 {
