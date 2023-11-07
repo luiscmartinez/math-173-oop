@@ -18,3 +18,8 @@ private:
     int num;
     int den;
 };
+
+Rational operator+(const Rational&, const Rational&);
+Rational operator-(const Rational&, const Rational&);
+Rational operator*(const Rational&, const Rational&);
+Rational operator/(const Rational&, const Rational&);

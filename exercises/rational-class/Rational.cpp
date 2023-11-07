@@ -29,23 +29,21 @@ Rational &Rational::operator+=(const Rational &a)
     return *this;
 }
 // subtracts two rational numbers
-Rational &Rational::operator-=(const Rational &a) {
+Rational &Rational::operator-=(const Rational &a)
+{
     int x = num;
     int y = den;
     int w = a.num;
     int z = a.den;
     // i think we might be able to reduce first than determine if dens are equal
-    if (y == z) {
-        num = x - w;
-    } else {
-        num = x * z - y * w;
-        den = y * z;
-    }
+    num = x * z - y * w;
+    den = y * z;
     reduce();
     return *this;
 }
 
-Rational &Rational::operator*=(const Rational &a) {
+Rational &Rational::operator*=(const Rational &a)
+{
     int x = num;
     int y = den;
     int w = a.num;
@@ -58,7 +56,8 @@ Rational &Rational::operator*=(const Rational &a) {
     return *this;
 }
 
-Rational &Rational::operator/=(const Rational &a) {
+Rational &Rational::operator/=(const Rational &a)
+{
     int x = num;
     int y = den;
     int w = a.num;
@@ -69,6 +68,34 @@ Rational &Rational::operator/=(const Rational &a) {
 
     reduce();
     return *this;
+}
+
+Rational operator+(const Rational &r, const Rational &s)
+{
+    Rational result = r;
+    result += s;
+    return result;
+}
+
+Rational operator-(const Rational &r, const Rational &s)
+{
+    Rational result = r;
+    result -= s;
+    return result;
+}
+
+Rational operator*(const Rational &r, const Rational &s)
+{
+    Rational result = r;
+    result *= s;
+    return result;
+}
+
+Rational operator/(const Rational &r, const Rational &s)
+{
+    Rational result = r;
+    result /= s;
+    return result;
 }
 
 // define std::ostream& operator<<(std::ostream& out, const Rational& a)
