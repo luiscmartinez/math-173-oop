@@ -1076,3 +1076,4 @@ dkms.conf
 *.out
 *.app
 choices
+*run
