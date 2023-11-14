@@ -14,12 +14,8 @@ int main()
         {
             for (int k = 0; k < 2; ++k)
             {
-                std::cout << "what is left value " << left[(i - 1) * r + k] << "\n";
-                std::cout << "what is right value " << right[j - 1 + k * r] << "\n";
                 int index = ((i - 1) * 2) + (j - 1);
-                std::cout << "what is index " << index << "\n";
                 result[index] += left[(i - 1) * r + k] * right[j - 1 + k * r];
-                std::cout << "print new result at index " << index << " which has the value is " << result[index] << "\n";
             }
         }
     }
