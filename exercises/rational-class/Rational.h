@@ -18,7 +18,7 @@ private:
     int num;
     int den;
 };
-
+//? what are we doing here ?
 Rational operator+(const Rational&, const Rational&);
 Rational operator-(const Rational&, const Rational&);
 Rational operator*(const Rational&, const Rational&);
