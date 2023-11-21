@@ -65,6 +65,10 @@
         "deque": "cpp",
         "fstream": "cpp",
         "map": "cpp",
-        "stack": "cpp"
-    }
+        "stack": "cpp",
+        "filesystem": "cpp",
+        "iterator": "cpp",
+        "memory_resource": "cpp"
+    },
+    "liveServer.settings.port": 5501
 }
