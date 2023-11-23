@@ -19,21 +19,33 @@ int main()
 
             std::cout << "State:\n";
             std::cout << state << "\n";
-            std::cout << "Adjacent States:\n";
-            for (size_t i = 2; i < adjacentStates.length(); ++i)
+            std::cout << "Adjacent States:";
+            // do not need a new line for states without adjacent states
+            // instead new line will be inserted at the end of the while else block
+            if (adjacentStates.length() != 2)
             {
-                // Checking for space
+                std::cout << "\n";
+            }
+            // starts at adjacent states
+            for (size_t i = 3; i < adjacentStates.length(); ++i)
+            {
+                // Checking for whitespace
                 if (adjacentStates[i] == ' ')
                 {
-                    std::cout << "\n";
+                    // two continuous whitespace means
+                    // we need a new line to output another adjacent state
+                    if (adjacentStates[i + 1] == ' ')
+                    {
+                        std::cout << "\n";
+                    }
                 }
                 else
                 {
                     std::cout << adjacentStates[i];
                 }
             }
+            std::cout << "\n";
         }
-        std::cout << "\n";
     }
     file.close();
     return 0;
