@@ -25,3 +25,8 @@ square_matrix::square_matrix(const square_matrix &matrix) : size(matrix.size)
         data[i] = matrix.data[i];
     }
 }
+
+square_matrix::~square_matrix()
+{
+    delete[] data;
+}
