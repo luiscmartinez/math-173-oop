@@ -1,0 +1,1 @@
+Define the function int_sqrt which returns an approximation for the square root of its integer input, as follows. The return value of int_sqrt(n) is the largest int a such that a2 ≤ n. (Examples: int_sqrt(10) returns 3 and int_sqrt(80) returns 8.) You may not use library functions from cmath or elsewhere. Just use a while loop.
