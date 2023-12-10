@@ -1,5 +1,5 @@
 #include "square_matrix.h"
-
+// constructors
 square_matrix::square_matrix(int n)
 {
     size = n * n;
@@ -17,6 +17,7 @@ square_matrix::square_matrix(int n, const std::initializer_list<double> &init_li
     std::copy(init_list.begin(), init_list.end(), data);
 }
 
+// copy constructor
 square_matrix::square_matrix(const square_matrix &matrix) : size(matrix.size)
 {
     data = new double[size];
@@ -26,6 +27,7 @@ square_matrix::square_matrix(const square_matrix &matrix) : size(matrix.size)
     }
 }
 
+// delete constructor
 square_matrix::~square_matrix()
 {
     delete[] data;
