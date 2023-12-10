@@ -11,3 +11,8 @@ Totaler my_total; // my_total stores 0
 
  cout << my_total; // writes current value 12.1 to the console
 ```
+
+Be sure to
+(1) Define a constructor which takes one argument with default value 0. The value input is the initial value stored.
+(2) Overload operator() so numbers input are added to the total, as demonstrated above.
+(3) Overload operator<< to get console output, as demonstrated above. Store the total in a private member and make operator<< a friend function.

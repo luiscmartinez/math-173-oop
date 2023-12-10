@@ -5,9 +5,9 @@
 class Totaler
 {
 public:
-    Totaler()
+    Totaler(int initTotal = 0)
     {
-        total = 0;
+        total = initTotal;
     }
     double &operator()(double n)
     {
