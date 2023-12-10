@@ -10,6 +10,7 @@ public:
     square_matrix(int, const std::initializer_list<double> &);
     square_matrix(const square_matrix &);
     ~square_matrix();
+    square_matrix &operator=(const square_matrix &);
 
 private:
     int size;
