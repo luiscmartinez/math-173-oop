@@ -15,6 +15,8 @@ public:
     square_matrix &operator+=(const square_matrix &);
     square_matrix &operator-=(const square_matrix &);
     square_matrix &operator*=(const square_matrix &);
+    int num_rows() const { return size; }
+    int num_cols() const { return size; }
 
 private:
     int size;
