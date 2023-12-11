@@ -1,5 +1,6 @@
 #include "square_matrix.h"
 #include "iostream"
+#include <typeinfo>
 
 // constructors
 square_matrix::square_matrix(int n)
@@ -15,7 +16,7 @@ square_matrix::square_matrix(int n)
 square_matrix::square_matrix(int n, const std::initializer_list<double> &init_list)
 {
     size = n;
-    data = new double[size];
+    data = new double[size * size];
     std::copy(init_list.begin(), init_list.end(), data);
 }
 
@@ -62,4 +63,13 @@ double &square_matrix::operator()(int row, int col) const
 {
     int index = ((row - 1) * size) + (col - 1);
     return data[index];
+}
+
+square_matrix &square_matrix::operator+=(const square_matrix &matrix)
+{
+    for (int i = 0; i < size * size; ++i)
+    {
+        data[i] += matrix.data[i];
+    }
+    return *this;
 }

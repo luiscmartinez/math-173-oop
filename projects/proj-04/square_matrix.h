@@ -12,6 +12,7 @@ public:
     ~square_matrix();
     square_matrix &operator=(const square_matrix &);
     double &operator()(int row, int col) const;
+    square_matrix &operator+=(const square_matrix &);
 
 private:
     int size;
