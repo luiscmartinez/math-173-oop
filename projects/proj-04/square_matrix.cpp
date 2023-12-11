@@ -85,10 +85,25 @@ square_matrix &square_matrix::operator-=(const square_matrix &matrix)
 
 square_matrix &square_matrix::operator*=(const square_matrix &matrix)
 {
+    double results[size * size];
+
+    for (int i = 0; i < size; ++i)
+    {
+        for (int j = 0; j < size; ++j)
+        {
+            double sum = 0.0;
+            for (int k = 0; k < size; ++k)
+            {
+                sum += data[i * size + k] * matrix.data[k * size + j];
+            }
+            int index = i * size + j;
+            results[index] = sum;
+        }
+    }
 
     for (int i = 0; i < size * size; ++i)
     {
-        data[i] *= matrix.data[i];
+        data[i] = results[i];
     }
     return *this;
 }
