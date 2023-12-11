@@ -73,3 +73,13 @@ square_matrix &square_matrix::operator+=(const square_matrix &matrix)
     }
     return *this;
 }
+
+square_matrix &square_matrix::operator-=(const square_matrix &matrix)
+{
+    for (int i = 0; i < size * size; ++i)
+    {
+        data[i] -= matrix.data[i];
+        std::cout << data[i];
+    }
+    return *this;
+}
