@@ -1,10 +1,12 @@
 #include "square_matrix.h"
+#include "iostream"
+
 // constructors
 square_matrix::square_matrix(int n)
 {
-    size = n * n;
-    data = new double[size];
-    for (int i = 0; i < size; ++i)
+    size = n;
+    data = new double[size * size];
+    for (int i = 0; i < size * size; ++i)
     {
         data[i] = 0.0;
     }
@@ -12,13 +14,13 @@ square_matrix::square_matrix(int n)
 
 square_matrix::square_matrix(int n, const std::initializer_list<double> &init_list)
 {
-    size = n * n;
+    size = n;
     data = new double[size];
     std::copy(init_list.begin(), init_list.end(), data);
 }
 
 // copy constructor
-square_matrix::square_matrix(const square_matrix &matrix) : size(matrix.size)
+square_matrix::square_matrix(const square_matrix &matrix) : size(matrix.size * matrix.size)
 {
     data = new double[size];
     for (int i = 0; i < size; ++i)
@@ -38,7 +40,7 @@ square_matrix &square_matrix::operator=(const square_matrix &matrix)
 {
     if (size == matrix.size)
     {
-        for (int i = 0; i < size; ++i)
+        for (int i = 0; i < size * size; ++i)
         {
             data[i] = matrix.data[i];
         }
@@ -47,11 +49,17 @@ square_matrix &square_matrix::operator=(const square_matrix &matrix)
     {
         delete[] data;
         size = matrix.size;
-        data = new double[matrix.size];
-        for (int i = 0; i < matrix.size; ++i)
+        data = new double[matrix.size * matrix.size];
+        for (int i = 0; i < matrix.size * matrix.size; ++i)
         {
             data[i] = matrix.data[i];
         }
     }
     return *this;
+}
+
+double &square_matrix::operator()(int row, int col) const
+{
+    int index = ((row - 1) * size) + (col - 1);
+    return data[index];
 }
