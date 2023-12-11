@@ -22,3 +22,7 @@ private:
     int size;
     double *data = nullptr;
 };
+
+square_matrix operator+(const square_matrix &, const square_matrix &);
+square_matrix operator-(const square_matrix &, const square_matrix &);
+square_matrix operator*(const square_matrix &, const square_matrix &);

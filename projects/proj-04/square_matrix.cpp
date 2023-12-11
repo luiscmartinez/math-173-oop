@@ -107,3 +107,24 @@ square_matrix &square_matrix::operator*=(const square_matrix &matrix)
     }
     return *this;
 }
+
+square_matrix operator+(const square_matrix &leftMatrix, const square_matrix &rightMatrix)
+{
+    square_matrix result(leftMatrix);
+    result += rightMatrix;
+    return result;
+}
+
+square_matrix operator-(const square_matrix &leftMatrix, const square_matrix &rightMatrix)
+{
+    square_matrix result(leftMatrix);
+    result -= rightMatrix;
+    return result;
+}
+
+square_matrix operator*(const square_matrix &leftMatrix, const square_matrix &rightMatrix)
+{
+    square_matrix result(leftMatrix);
+    result *= rightMatrix;
+    return result;
+}
