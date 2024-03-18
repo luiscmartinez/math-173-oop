@@ -68,7 +68,9 @@
         "stack": "cpp",
         "filesystem": "cpp",
         "iterator": "cpp",
-        "memory_resource": "cpp"
+        "memory_resource": "cpp",
+        "__verbose_abort": "cpp",
+        "charconv": "cpp"
     },
     "liveServer.settings.port": 5501
 }
